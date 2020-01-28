@@ -56,6 +56,10 @@ public class Instructor {
 	public InstructorDetail getInstructorDetail() {
 		return instructorDetail;
 	}
+	
+	public void setInstructorDetail(InstructorDetail  instructorDetail) {
+		this.instructorDetail = instructorDetail;
+	}
 
 	@Override
 	public String toString() {

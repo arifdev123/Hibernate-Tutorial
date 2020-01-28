@@ -2,6 +2,7 @@ package in.co.javacoder.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class TestJDBC {
 	
@@ -11,13 +12,21 @@ public class TestJDBC {
 		String user = "hbstudent";
 		String password = "hbstudent";
 		
+		Connection mySqlConnection = null;
 		try {
 			System.out.println("Connecting to MYSQL server ...");
-			Connection mySqlConnection = DriverManager.getConnection(jdbcUrl, user, password);
+			mySqlConnection = DriverManager.getConnection(jdbcUrl, user, password);
 			System.out.println("Connection Successful !");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			if(mySqlConnection != null)
+				try {
+					mySqlConnection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 		}
 		
 	}
