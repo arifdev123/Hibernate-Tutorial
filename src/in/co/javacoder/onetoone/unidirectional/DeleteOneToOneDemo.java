@@ -25,7 +25,7 @@ public class DeleteOneToOneDemo {
 			session.beginTransaction();
 			
 			// Retreiving the data from DB and getting an object
-			int theId = 1;
+			int theId = 2;
 			Instructor tempInstructor = session.get(Instructor.class, theId); 
 			System.out.println("Found instructor : " + tempInstructor);
 			
@@ -37,6 +37,7 @@ public class DeleteOneToOneDemo {
 				//
 				
 				System.out.println("Deleting : " + tempInstructor);
+				System.out.println("Deleting instructor details : " + tempInstructor.getInstructorDetail());
 				session.delete(tempInstructor);
 				
 			}
