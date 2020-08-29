@@ -25,7 +25,7 @@ public class DeleteOneToOneBiDirectionalDemo {
 			session.beginTransaction();
 			
 			// Retreiving the data from DB and getting an object
-			int theId = 3;
+			int theId = 5;
 			InstructorDetail tempInstructorDetail = session.get(InstructorDetail.class, theId); 
 			System.out.println("Found instructor detail: " + tempInstructorDetail);
 			
